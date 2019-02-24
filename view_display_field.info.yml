@@ -1,0 +1,5 @@
+name: 'View Display Field'
+type: module
+description: 'My Awesome Module'
+core: 8.x
+package: 'Circular One'
