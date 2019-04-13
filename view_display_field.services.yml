@@ -1,10 +1,10 @@
 services:
- view_display_field.normalizer.list:
-   class: Drupal\view_display_field\Normalizer\ViewDisplayListNormalizer
-   tags:
-     - { name: normalizer, priority: 50 }#
+  view_display_field.normalizer.list:
+    class: Drupal\view_display_field\Normalizer\ViewDisplayListNormalizer
+    tags:
+      - { name: normalizer, priority: 50 }
 
- view_display_field.normalizer:
-   class: Drupal\view_display_field\Normalizer\ViewDisplayNormalizer
-   tags:
-     - { name: normalizer, priority: 50 }
+  view_display_field.normalizer:
+    class: Drupal\view_display_field\Normalizer\ViewDisplayNormalizer
+    tags:
+      - { name: normalizer, priority: 50 }
