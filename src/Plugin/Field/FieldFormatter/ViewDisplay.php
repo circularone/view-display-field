@@ -57,7 +57,9 @@ class ViewDisplay extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $elements[$delta] = ['#markup' => $this->viewValue($item)];
+      $elements[$delta] = [
+        '#markup' => $this->viewValue($item)
+      ];
     }
 
     return $elements;
@@ -73,8 +75,12 @@ class ViewDisplay extends FormatterBase {
    *   The textual output generated.
    */
   protected function viewValue(FieldItemInterface $item) {
-
     $value = $item->view;
+
+    if (!intval($item->render)) {
+      return $item->getString();
+    }
+
     $value = explode('.', $value);
     $view = Views::getView($value[0]);
 

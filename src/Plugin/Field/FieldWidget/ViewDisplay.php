@@ -46,6 +46,12 @@ class ViewDisplay extends WidgetBase {
       '#default_value' => isset($items[$delta]->arguments) ? $items[$delta]->arguments : NULL,
     ];
 
+    $element['render'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Arguments'),
+      '#default_value' => isset($items[$delta]->render) ? $items[$delta]->render : NULL,
+    ];
+
     return $element;
   }
 

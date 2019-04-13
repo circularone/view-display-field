@@ -39,6 +39,11 @@ class ViewDisplay extends FieldItemBase {
           'length' => 255,
           'not null' => TRUE,
         ],
+        'render' => [
+          'type' => 'int',
+          'size' => 'tiny',
+          'not null' => TRUE,
+        ],
       ],
     ];
   }
@@ -61,6 +66,9 @@ class ViewDisplay extends FieldItemBase {
     $properties['arguments'] = DataDefinition::create('string')
       ->setLabel(t('Arguments'))
       ->setDescription(t('Default arguments to apply to the view'));
+    $properties['render'] = DataDefinition::create('integer')
+      ->setLabel(t('Render'))
+      ->setDescription(t('Wether to render the view'));
 
     return $properties;
   }
