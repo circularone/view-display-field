@@ -22,11 +22,8 @@ class ViewDisplayNormalizer extends FieldItemNormalizer {
   public function normalize($field_item, $format = NULL, array $context = []) {
     $value = $field_item->getValue();
 
-    if (intval($value['render'])) {
-      return [
-        'view' => $value['view'],
-        'arguments' => $value['arguments'],
-      ];
+    if (!intval($value['render'])) {
+      return $value;
     }
 
     $view_id = $value['view'];
