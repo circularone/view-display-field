@@ -2,4 +2,5 @@ name: 'View Display Field'
 type: module
 description: 'My Awesome Module'
 core: 8.x
+core_version_requirement: ^8.0 || ^9
 package: 'Circular One'
