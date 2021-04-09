@@ -24,7 +24,7 @@ class ViewDisplay extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
 
-    $views = \Drupal::entityManager()->getStorage('view')->loadMultiple();
+    $views = \Drupal::entityTypeManager()->getStorage('view')->loadMultiple();
     $options = ['' => t('- None -')];
 
     foreach ($views as $view) {
@@ -48,7 +48,7 @@ class ViewDisplay extends WidgetBase {
 
     $element['render'] = [
       '#type' => 'checkbox',
-      '#title' => t('Arguments'),
+      '#title' => t('Render View'),
       '#default_value' => isset($items[$delta]->render) ? $items[$delta]->render : NULL,
     ];
 
